@@ -1,5 +1,5 @@
 import './App.css';
-import freeCodeCampLogo from './imgs/freeCodeCamp-logo.png';
+import Logo from './components/Logo';
 import Boton from './components/Boton';
 import Pantalla from './components/Pantalla';
 import BotonClear from './components/BotonClear';
@@ -17,18 +17,16 @@ function App() {
     if(input) {
       setInput(evaluate(input));
     } else {
-      alert('Sos malo/a va');
+      setInput('SYNTAX ERROR');
+      setTimeout(function() {
+        setInput('');
+      }, 2000);
     }
   };
 
   return (
     <div className="App">
-      <div className='freecodecamp-logo-contenedor'>
-        <img
-          src={freeCodeCampLogo}
-          className='freecodecamp-logo'
-          alt='Logo de freeCodeCamp' />
-      </div>
+      <Logo />
       <div className='contenedor-calculadora'>
         <Pantalla input={input} />
         <div className='fila'>

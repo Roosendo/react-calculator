@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import '../styleSheets/BotonClear.css';
 
 const BotonClear = (props) => (
