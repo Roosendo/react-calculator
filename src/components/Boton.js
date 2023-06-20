@@ -8,7 +8,9 @@ const isOperator = valor => {
 
   return(
     <div
-      className={`boton-contenedor ${isOperator(props.children) ? 'operador' : ''}`.trim()}>
+      className={`boton-contenedor ${isOperator(props.children) ? 'operador' : ''}`.trim()}
+      // Se dispara una funcion que manda a llamar a la funcion 'manejarClick'
+      onClick={() => props.manejarClick(props.children)}>
       {props.children}
     </div>
   );
