@@ -14,7 +14,6 @@ function App() {
   };
 
   const calcularResultado = () => {
-    const operators = /[/*+]/;
     const multipleOperators = /[/*+].*[/*+]/;
     const atEndOperator = /[/*+]$/;
 
