@@ -14,13 +14,20 @@ function App() {
   };
 
   const calcularResultado = () => {
-    if(input) {
-      setInput(evaluate(input));
-    } else {
+    const operators = /[/*+]/;
+    const multipleOperators = /[/*+].*[/*+]/;
+    const atEndOperator = /[/*+]$/;
+
+    if(multipleOperators.test(input) || atEndOperator.test(input)) {
       setInput('SYNTAX ERROR');
-      setTimeout(function() {
-        setInput('');
-      }, 2000);
+      setTimeout(() => setInput(''), 2000);
+    } else {
+      try {
+        setInput(evaluate(input));
+      } catch(error) {
+        setInput('SYNTAX ERROR');
+      setTimeout(() => setInput(''), 2000);
+      }
     }
   };
 
